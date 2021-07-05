@@ -1,8 +1,8 @@
 # StripedProcessButton
 HarmonyOS library. Animated striped button to show loading process.
 
-## Screenshots
-
+## Screenshot
+<img src = "https://github.com/alpesh12345/StripedProcessButton/blob/main/screenshots/stripedprocessbutton.gif"/>
 
 ## Usage
 
