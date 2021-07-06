@@ -1,26 +1,25 @@
-package com.alpesh.strippedprocessbutton;
+package com.nikartm.stripedprocessbutton;
 
 import static ohos.agp.components.AttrHelper.getDensity;
-
-import com.alpesh.strippedprocessbutton.constant.Constants;
 import ohos.agp.components.AttrSet;
 import ohos.agp.components.Button;
 import ohos.agp.components.Component;
 import ohos.agp.render.Canvas;
 import ohos.app.Context;
+import com.nikartm.stripedprocessbutton.constant.Constants;
 
 /**
  * Striped process button.
  */
 public class StripedProcessButton extends Button implements Component.BindStateChangedListener, Component.DrawTask {
-    private AnimatedStripedDrawable animatedDrawable;
-    private StripedDrawable stripedDrawable;
-    private State state = State.STOP;
-    private long startAnimDuration = Constants.NO_INIT;
-    private long stopAnimDuration = Constants.NO_INIT;
-    private boolean buttonAnimated = Constants.DEF_BUTTON_ANIM;
-    private String defaultText;
-    private float density;
+    private AnimatedStripedDrawable mAnimatedDrawable;
+    private StripedDrawable mStripedDrawable;
+    private State mState = State.STOP;
+    private long mStartAnimDuration = Constants.NO_INIT;
+    private long mStopAnimDuration = Constants.NO_INIT;
+    private boolean mButtonAnimated = Constants.DEF_BUTTON_ANIM;
+    private String mDefaultText;
+    private float mDensity;
 
     public StripedProcessButton(Context context) {
         super(context);
@@ -38,15 +37,15 @@ public class StripedProcessButton extends Button implements Component.BindStateC
     }
 
     private void initAttrs(AttrSet attrs) {
-        density = getDensity(getContext());
+        mDensity = getDensity(getContext());
         AttributeController attrController = new AttributeController(attrs);
-        stripedDrawable = attrController.getStripedDrawable();
-        addOhosAttr(stripedDrawable);
+        mStripedDrawable = attrController.getStripedDrawable();
+        addOhosAttr(mStripedDrawable);
         try {
-            animatedDrawable = new AnimatedStripedDrawable(stripedDrawable);
-            animatedDrawable.setComponent(this);
+            mAnimatedDrawable = new AnimatedStripedDrawable(mStripedDrawable);
+            mAnimatedDrawable.setComponent(this);
         } catch (Exception e) {
-            //
+            //  exception
         }
         setBindStateChangedListener(this);
         addDrawTask(this:: onDraw);
@@ -64,20 +63,20 @@ public class StripedProcessButton extends Button implements Component.BindStateC
 
     @Override
     public void onComponentBoundToWindow(Component component) {
-        defaultText = getText() != null ? getText() : "test...";
+        mDefaultText = getText() != null ? getText() : "test...";
         launchAnimationWithDelay();
     }
 
     @Override
     public void onComponentUnboundFromWindow(Component component) {
-        //
+        // empty
     }
 
     /**
      * Launch animation with delay when view attached to window.
      */
     private void launchAnimationWithDelay() {
-        switch (state) {
+        switch (mState) {
             case START:
                 start();
                 break;
@@ -91,9 +90,9 @@ public class StripedProcessButton extends Button implements Component.BindStateC
 
     @Override
     public void onDraw(Component component, Canvas canvas) {
-        setBackground(animatedDrawable);
+        setBackground(mAnimatedDrawable);
         setEnabled(!isRunning());
-        animatedDrawable.drawToCanvas(canvas);
+        mAnimatedDrawable.drawToCanvas(canvas);
     }
 
     /**
@@ -101,12 +100,12 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * then start AnimatedStripedDrawable.
      */
     public void start() {
-        state = State.START;
+        mState = State.START;
         if (isRunning() || !isBoundToWindow()) {
             return;
         }
         setEnabled(isRunning());
-        animatedDrawable.start();
+        mAnimatedDrawable.start();
         animateButton(isRunning());
     }
 
@@ -115,17 +114,20 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * then stop AnimatedStripedDrawable.
      */
     public void stop() {
-        state = State.STOP;
+        mState = State.STOP;
         if (!isRunning() || !isBoundToWindow()) {
             return;
         }
         setEnabled(isRunning());
-        animatedDrawable.stop();
+        mAnimatedDrawable.stop();
         animateButton(isRunning());
     }
 
+    /**
+     * Check if AnimatedStripeDrawable is running.
+     */
     public boolean isRunning() {
-        return isBoundToWindow() && animatedDrawable.isRunning();
+        return isBoundToWindow() && mAnimatedDrawable.isRunning();
     }
 
     private void animateButton(boolean start) {
@@ -143,11 +145,11 @@ public class StripedProcessButton extends Button implements Component.BindStateC
     private void setCurrentText(boolean start) {
         String currentText;
         if (start) {
-            currentText = stripedDrawable.getLoadingText() == null
-                    ? defaultText
-                    : stripedDrawable.getLoadingText();
+            currentText = mStripedDrawable.getLoadingText() == null
+                    ? mDefaultText
+                    : mStripedDrawable.getLoadingText();
         } else {
-            currentText = defaultText;
+            currentText = mDefaultText;
         }
         setText(currentText);
     }
@@ -158,7 +160,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @return start duration in ms
      */
     public long getStartAnimDuration() {
-        return startAnimDuration;
+        return mStartAnimDuration;
     }
 
     /**
@@ -167,7 +169,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param startAnimDuration set duration in ms.
      */
     public StripedProcessButton setStartAnimDuration(long startAnimDuration) {
-        this.startAnimDuration = startAnimDuration;
+        this.mStartAnimDuration = startAnimDuration;
         invalidate();
         return this;
     }
@@ -176,7 +178,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get current stop animation duration in ms.
      */
     public long getStopAnimDuration() {
-        return stopAnimDuration;
+        return mStopAnimDuration;
     }
 
     /**
@@ -185,7 +187,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param stopAnimDuration set duration.
      */
     public StripedProcessButton setStopAnimDuration(long stopAnimDuration) {
-        this.stopAnimDuration = stopAnimDuration;
+        this.mStopAnimDuration = stopAnimDuration;
         invalidate();
         return this;
     }
@@ -194,7 +196,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get text when button has loading state.
      */
     public String getLoadingText() {
-        return stripedDrawable.getLoadingText();
+        return mStripedDrawable.getLoadingText();
     }
 
     /**
@@ -203,7 +205,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param loadingText sets text when loading started
      */
     public StripedProcessButton setLoadingText(String loadingText) {
-        stripedDrawable.setLoadingText(loadingText);
+        mStripedDrawable.setLoadingText(loadingText);
         invalidate();
         return this;
     }
@@ -214,7 +216,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @return true if button is animated else false
      */
     public boolean isButtonAnimated() {
-        return buttonAnimated;
+        return mButtonAnimated;
     }
 
     /**
@@ -223,7 +225,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param buttonAnimated if true button can be animated
      */
     public StripedProcessButton setButtonAnimated(boolean buttonAnimated) {
-        this.buttonAnimated = buttonAnimated;
+        this.mButtonAnimated = buttonAnimated;
         invalidate();
         return this;
     }
@@ -232,7 +234,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get width of stripes.
      */
     public float getStripeWidth() {
-        return stripedDrawable.getStripeWidth();
+        return mStripedDrawable.getStripeWidth();
     }
 
     /**
@@ -241,7 +243,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param stripeWidth on view
      */
     public StripedProcessButton setStripeWidth(float stripeWidth) {
-        stripedDrawable.setStripeWidth(stripeWidth * density);
+        mStripedDrawable.setStripeWidth(stripeWidth * mDensity);
         invalidate();
         return this;
     }
@@ -250,7 +252,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get drawable background color.
      */
     public int getColorBack() {
-        return stripedDrawable.getColorBack();
+        return mStripedDrawable.getColorBack();
     }
 
     /**
@@ -259,7 +261,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param colorBack background color
      */
     public StripedProcessButton setColorBack(int colorBack) {
-        stripedDrawable.setColorBack(colorBack);
+        mStripedDrawable.setColorBack(colorBack);
         invalidate();
         return this;
     }
@@ -268,7 +270,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get color the main stripe.
      */
     public int getColorMain() {
-        return stripedDrawable.getColorMain();
+        return mStripedDrawable.getColorMain();
     }
 
     /**
@@ -277,7 +279,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param colorMain color of main stripe
      */
     public StripedProcessButton setColorMain(int colorMain) {
-        stripedDrawable.setColorMain(colorMain);
+        mStripedDrawable.setColorMain(colorMain);
         invalidate();
         return this;
     }
@@ -286,7 +288,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get color the sub stripe.
      */
     public int getColorSub() {
-        return stripedDrawable.getColorSub();
+        return mStripedDrawable.getColorSub();
     }
 
     /**
@@ -295,7 +297,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param colorSub color of sub stripe
      */
     public StripedProcessButton setColorSub(int colorSub) {
-        stripedDrawable.setColorSub(colorSub);
+        mStripedDrawable.setColorSub(colorSub);
         invalidate();
         return this;
     }
@@ -304,7 +306,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get alpha stripes.
      */
     public float getStripeAlpha() {
-        return stripedDrawable.getStripeAlpha();
+        return mStripedDrawable.getStripeAlpha();
     }
 
     /**
@@ -313,7 +315,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param alpha stripes
      */
     public StripedProcessButton setStripeAlpha(float alpha) {
-        stripedDrawable.setStripeAlpha(alpha);
+        mStripedDrawable.setStripeAlpha(alpha);
         invalidate();
         return this;
     }
@@ -322,7 +324,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get drawable corner radius.
      */
     public float getCornerRadius() {
-        return stripedDrawable.getCornerRadius();
+        return mStripedDrawable.getCornerRadius();
     }
 
     /**
@@ -331,7 +333,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param cornerRadius radius
      */
     public StripedProcessButton setCornerRadius(float cornerRadius) {
-        stripedDrawable.setCornerRadius(cornerRadius);
+        mStripedDrawable.setCornerRadius(cornerRadius);
         invalidate();
         return this;
     }
@@ -340,7 +342,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get duration of stripes animation.
      */
     public int getStripeDuration() {
-        return stripedDrawable.getStripeDuration();
+        return mStripedDrawable.getStripeDuration();
     }
 
     /**
@@ -349,7 +351,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param stripeDuration set duration.
      */
     public StripedProcessButton setStripeDuration(int stripeDuration) {
-        stripedDrawable.setStripeDuration(stripeDuration);
+        mStripedDrawable.setStripeDuration(stripeDuration);
         invalidate();
         return this;
     }
@@ -358,7 +360,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get tilt of stripes.
      */
     public float getTilt() {
-        return stripedDrawable.getTilt();
+        return mStripedDrawable.getTilt();
     }
 
     /**
@@ -367,7 +369,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param tilt of stripes.
      */
     public StripedProcessButton setTilt(float tilt) {
-        stripedDrawable.setTilt(tilt);
+        mStripedDrawable.setTilt(tilt);
         invalidate();
         return this;
     }
@@ -376,7 +378,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get state of tilt stripes. If true - tilt to left, false - tilt to right.
      */
     public boolean isStripeRevert() {
-        return stripedDrawable.isStripeRevert();
+        return mStripedDrawable.isStripeRevert();
     }
 
     /**
@@ -385,7 +387,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param stripeRevert If true - tilt to left, false - tilt to right.
      */
     public StripedProcessButton setStripeRevert(boolean stripeRevert) {
-        stripedDrawable.setStripeRevert(stripeRevert);
+        mStripedDrawable.setStripeRevert(stripeRevert);
         invalidate();
         return this;
     }
@@ -394,7 +396,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get states of showing stripes.
      */
     public boolean isShowStripes() {
-        return stripedDrawable.isShowStripes();
+        return mStripedDrawable.isShowStripes();
     }
 
     /**
@@ -403,7 +405,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param showStripes If true - stripes showing, false - stripes gone.
      */
     public StripedProcessButton setShowStripes(boolean showStripes) {
-        stripedDrawable.setShowStripes(showStripes);
+        mStripedDrawable.setShowStripes(showStripes);
         invalidate();
         return this;
     }
@@ -412,7 +414,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * Get states of stripes appearance.
      */
     public boolean isStripeGradient() {
-        return stripedDrawable.isStripeGradient();
+        return mStripedDrawable.isStripeGradient();
     }
 
     /**
@@ -421,7 +423,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
      * @param stripeGradient if true stripes has gradient style, false - flat strips.
      */
     public StripedProcessButton setStripeGradient(boolean stripeGradient) {
-        stripedDrawable.setStripeGradient(stripeGradient);
+        mStripedDrawable.setStripeGradient(stripeGradient);
         invalidate();
         return this;
     }

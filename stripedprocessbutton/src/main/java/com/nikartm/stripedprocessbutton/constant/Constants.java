@@ -1,4 +1,4 @@
-package com.alpesh.strippedprocessbutton.constant;
+package com.nikartm.stripedprocessbutton.constant;
 
 import ohos.agp.utils.Color;
 
@@ -6,7 +6,6 @@ import ohos.agp.utils.Color;
  * Constants of stripped process button.
  */
 public class Constants {
-
     public static final float STRIPE_WIDTH = 36f;
     public static final float STRIPE_ALPHA = 0.3f;
     public static final int CORNER = 0;

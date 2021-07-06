@@ -1,23 +1,20 @@
 package com.alpesh.stripedprocessbtn;
 
-import com.alpesh.strippedprocessbutton.AnimatedStripedDrawable;
-import com.alpesh.strippedprocessbutton.AttributeController;
-import com.alpesh.strippedprocessbutton.StripedDrawable;
-import com.alpesh.strippedprocessbutton.StripedProcessButton;
 import ohos.aafwk.ability.delegation.AbilityDelegatorRegistry;
 import ohos.agp.components.Attr;
 import ohos.agp.components.AttrSet;
 import ohos.agp.utils.Color;
 import ohos.app.Context;
+import com.nikartm.stripedprocessbutton.AnimatedStripedDrawable;
+import com.nikartm.stripedprocessbutton.AttributeController;
+import com.nikartm.stripedprocessbutton.StripedDrawable;
+import com.nikartm.stripedprocessbutton.StripedProcessButton;
 import org.junit.Before;
 import org.junit.Test;
-
+import static org.junit.Assert.*;
 import java.util.Optional;
 
-import static org.junit.Assert.*;
-
 public class StripedProcessButtonTest {
-
     private Context context;
     private AttrSet attrSet;
     private StripedProcessButton stripedProcessButton;
@@ -48,7 +45,6 @@ public class StripedProcessButtonTest {
                 return Optional.empty();
             }
         };
-
     }
 
     @Test
@@ -58,7 +54,7 @@ public class StripedProcessButtonTest {
         stripedProcessButton = new StripedProcessButton(context,attrSet);
         animatedDrawable = new AnimatedStripedDrawable(stripedDrawable);
         animatedDrawable.setComponent(stripedProcessButton);
-        assertEquals(String.valueOf(stripedProcessButton.getStartAnimDuration()),String.valueOf(-1));   // default set to -1
+        assertEquals(String.valueOf(stripedProcessButton.getStartAnimDuration()),String.valueOf(-1));// default set to -1
     }
 
     @Test
@@ -100,7 +96,6 @@ public class StripedProcessButtonTest {
         stripedProcessButton = new StripedProcessButton(context,attrSet);
         animatedDrawable = new AnimatedStripedDrawable(stripedDrawable);
         animatedDrawable.setComponent(stripedProcessButton);
-        //stripedProcessButton.setLoadingText("test_text");
         assertEquals("Loading",stripedProcessButton.getLoadingText());
     }
 
@@ -122,7 +117,7 @@ public class StripedProcessButtonTest {
         stripedProcessButton = new StripedProcessButton(context,attrSet);
         animatedDrawable = new AnimatedStripedDrawable(stripedDrawable);
         animatedDrawable.setComponent(stripedProcessButton);
-        assertTrue(stripedProcessButton.isButtonAnimated());        // default true
+        assertTrue(stripedProcessButton.isButtonAnimated()); // default true
     }
 
     @Test
@@ -313,7 +308,7 @@ public class StripedProcessButtonTest {
         stripedProcessButton = new StripedProcessButton(context,attrSet);
         animatedDrawable = new AnimatedStripedDrawable(stripedDrawable);
         animatedDrawable.setComponent(stripedProcessButton);
-        assertFalse(stripedProcessButton.isStripeRevert());   //default set to false
+        assertFalse(stripedProcessButton.isStripeRevert()); //default set to false
     }
 
     @Test
@@ -334,7 +329,7 @@ public class StripedProcessButtonTest {
         stripedProcessButton = new StripedProcessButton(context,attrSet);
         animatedDrawable = new AnimatedStripedDrawable(stripedDrawable);
         animatedDrawable.setComponent(stripedProcessButton);
-        assertFalse(stripedProcessButton.isShowStripes());    //default false
+        assertFalse(stripedProcessButton.isShowStripes()); //default false
     }
 
     @Test
@@ -355,7 +350,7 @@ public class StripedProcessButtonTest {
         stripedProcessButton = new StripedProcessButton(context,attrSet);
         animatedDrawable = new AnimatedStripedDrawable(stripedDrawable);
         animatedDrawable.setComponent(stripedProcessButton);
-        assertTrue(stripedProcessButton.isStripeGradient());  //default true
+        assertTrue(stripedProcessButton.isStripeGradient()); //default true
     }
 
     @Test

@@ -1,10 +1,9 @@
-package com.alpesh.strippedprocessbutton;
+package com.nikartm.stripedprocessbutton;
 
 /**
  * Used for calculating alpha value required to set StripeAlpha.
  */
 public class Util {
-
     private static final int MAX_ALPHA = 255;
     private static final int MIN_ALPHA = 0;
 
@@ -32,5 +31,4 @@ public class Util {
     private static float valueAlpha(float value) {
         return MAX_ALPHA * (value * 100f) / 100f;
     }
-
 }

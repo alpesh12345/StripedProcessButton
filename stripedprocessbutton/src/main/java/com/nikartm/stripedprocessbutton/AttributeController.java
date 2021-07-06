@@ -1,13 +1,13 @@
-package com.alpesh.strippedprocessbutton;
+package com.nikartm.stripedprocessbutton;
 
-import com.alpesh.strippedprocessbutton.constant.Constants;
+import com.nikartm.stripedprocessbutton.constant.Constants;
 import ohos.agp.components.AttrSet;
 
 /**
  * AttributeController class to get Attributes from XML and set them to {@link StripedDrawable}.
  */
 public class AttributeController {
-    private StripedDrawable stripedDrawable;
+    private StripedDrawable mStripedDrawable;
     private static final String STRIPE_WIDTH = "spb_stripeWidth";
     private static final String STRIPE_ALPHA = "spb_stripeAlpha";
     private static final String CORNER = "spb_cornerRadius";
@@ -22,7 +22,7 @@ public class AttributeController {
     private static final String LOADING_TEXT  = "spb_loadingText";
 
     public AttributeController(AttrSet attrs) {
-        stripedDrawable = new StripedDrawable();
+        mStripedDrawable = new StripedDrawable();
         initAttrs(attrs);
     }
 
@@ -30,12 +30,11 @@ public class AttributeController {
         if (attrs != null) {
             String loadingText = attrs.getAttr(LOADING_TEXT).isPresent() ? attrs.getAttr(
                     LOADING_TEXT).get().getStringValue() : "Loading";
-            stripedDrawable.setLoadingText(loadingText);
+            mStripedDrawable.setLoadingText(loadingText);
             setAttrsInt(attrs);
             setAttrsFloat(attrs);
             setAttrsBool(attrs);
         }
-
     }
 
     private void setAttrsInt(AttrSet attrs) {
@@ -50,7 +49,7 @@ public class AttributeController {
         int subStripeColor =  attrs.getAttr(DEF_SUB_STRIPE).isPresent() ? attrs.getAttr(
                 DEF_SUB_STRIPE).get().getColorValue().getValue() : Constants.DEF_SUB_STRIPE;
 
-        stripedDrawable.setTilt(stripeTilt)
+        mStripedDrawable.setTilt(stripeTilt)
                 .setStripeDuration(stripeDuration)
                 .setColorBack(background)
                 .setColorMain(mainStripeColor)
@@ -65,7 +64,7 @@ public class AttributeController {
         float cornerRadius =  attrs.getAttr(CORNER).isPresent() ? attrs.getAttr(
                 CORNER).get().getFloatValue() : Constants.CORNER;
 
-        stripedDrawable.setStripeWidth(stripeWidth)
+        mStripedDrawable.setStripeWidth(stripeWidth)
                 .setStripeAlpha(stripeAlpha)
                 .setCornerRadius(cornerRadius);
     }
@@ -78,7 +77,7 @@ public class AttributeController {
         boolean stripeGradient =  attrs.getAttr(GRADIENT).isPresent() ? attrs.getAttr(
                 GRADIENT).get().getBoolValue() : Constants.GRADIENT;
 
-        stripedDrawable.setStripeRevert(stripeRevert)
+        mStripedDrawable.setStripeRevert(stripeRevert)
                 .setShowStripes(showStripes)
                 .setStripeGradient(stripeGradient);
     }
@@ -89,7 +88,6 @@ public class AttributeController {
      * @return initialized {@link StripedDrawable}
      */
     public StripedDrawable getStripedDrawable() {
-        return stripedDrawable;
+        return mStripedDrawable;
     }
-
 }

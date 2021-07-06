@@ -15,7 +15,7 @@
   "deviceConfig": {},
   "module": {
     "package": "com.alpesh.stripedprocessbtn",
-    "name": ".MyApplication",
+    "name": "com.nikartm.stripedprocessbtn.MyApplication",
     "deviceType": [
       "phone","tablet","tv","wearable"
     ],
@@ -37,7 +37,7 @@
           }
         ],
         "orientation": "unspecified",
-        "name": "com.alpesh.stripedprocessbtn.MainAbility",
+        "name": "com.nikartm.stripedprocessbtn.MainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",
         "label": "$string:app_name",

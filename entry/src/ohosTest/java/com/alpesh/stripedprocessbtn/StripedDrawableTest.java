@@ -1,10 +1,11 @@
 package com.alpesh.stripedprocessbtn;
 
-import com.alpesh.strippedprocessbutton.StripedDrawable;
 import ohos.agp.text.Font;
 import ohos.agp.utils.Color;
-import org.junit.Test;
+import com.nikartm.stripedprocessbutton.StripedDrawable;
 import static org.junit.Assert.*;
+import org.junit.Test;
+
 
 public class StripedDrawableTest {
     @Test

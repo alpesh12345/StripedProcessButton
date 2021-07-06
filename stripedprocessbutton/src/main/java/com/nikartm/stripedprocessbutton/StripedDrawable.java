@@ -1,4 +1,4 @@
-package com.alpesh.strippedprocessbutton;
+package com.nikartm.stripedprocessbutton;
 
 import ohos.agp.text.Font;
 import ohos.agp.utils.Color;
@@ -7,33 +7,32 @@ import ohos.agp.utils.Color;
  * Striped Drawable class, has getters and setters for attributes to store.
  */
 public class StripedDrawable {
-
-    private float stripeWidth;
-    private int colorBack;
-    private int colorMain;
-    private int colorSub;
-    private float alpha;
-    private float cornerRadius;
-    private int stripeDuration;
-    private float tilt;
-    private boolean stripeRevert;
-    private boolean showStripes;
-    private boolean stripeGradient;
-    private String loadingText;
-    private String buttonText = "default";
-    private int textColor = Color.BLACK.getValue();
-    private int textSize = 30;
-    private Font fontName;
+    private float mStripeWidth;
+    private int mColorBack;
+    private int mColorMain;
+    private int mColorSub;
+    private float mAlpha;
+    private float mCornerRadius;
+    private int mStripeDuration;
+    private float mTilt;
+    private boolean mStripeRevert;
+    private boolean mShowStripes;
+    private boolean mStripeGradient;
+    private String mLoadingText;
+    private String mButtonText = "default";
+    private int mTextColor = Color.BLACK.getValue();
+    private int mTextSize = 30;
+    private Font mFontName;
 
     public StripedDrawable() {
-        //
+        // empty constructor
     }
 
     /**
      * Get width of stripes.
      */
     public float getStripeWidth() {
-        return stripeWidth;
+        return mStripeWidth;
     }
 
     /**
@@ -42,7 +41,7 @@ public class StripedDrawable {
      * @param stripeWidth is width
      */
     public StripedDrawable setStripeWidth(float stripeWidth) {
-        this.stripeWidth = stripeWidth;
+        this.mStripeWidth = stripeWidth;
         return this;
     }
 
@@ -50,7 +49,7 @@ public class StripedDrawable {
      * Get drawable background color.
      */
     public int getColorBack() {
-        return colorBack;
+        return mColorBack;
     }
 
     /**
@@ -59,7 +58,7 @@ public class StripedDrawable {
      * @param colorBack background color
      */
     public StripedDrawable setColorBack(int colorBack) {
-        this.colorBack = colorBack;
+        this.mColorBack = colorBack;
         return this;
     }
 
@@ -67,7 +66,7 @@ public class StripedDrawable {
      * Get color the main stripe.
      */
     public int getColorMain() {
-        return colorMain;
+        return mColorMain;
     }
 
     /**
@@ -76,7 +75,7 @@ public class StripedDrawable {
      * @param colorMain color of main stripe
      */
     public StripedDrawable setColorMain(int colorMain) {
-        this.colorMain = colorMain;
+        this.mColorMain = colorMain;
         return this;
     }
 
@@ -84,7 +83,7 @@ public class StripedDrawable {
      * Get color the sub stripe.
      */
     public int getColorSub() {
-        return colorSub;
+        return mColorSub;
     }
 
     /**
@@ -93,7 +92,7 @@ public class StripedDrawable {
      * @param colorSub color of sub stripe.
      */
     public StripedDrawable setColorSub(int colorSub) {
-        this.colorSub = colorSub;
+        this.mColorSub = colorSub;
         return this;
     }
 
@@ -101,7 +100,7 @@ public class StripedDrawable {
      * Get alpha stripes.
      */
     public float getStripeAlpha() {
-        return alpha;
+        return mAlpha;
     }
 
     /**
@@ -110,7 +109,7 @@ public class StripedDrawable {
      * @param alpha stripes
      */
     public StripedDrawable setStripeAlpha(float alpha) {
-        this.alpha = alpha;
+        this.mAlpha = alpha;
         return this;
     }
 
@@ -118,7 +117,7 @@ public class StripedDrawable {
      * Get custom button corner radius.
      */
     public float getCornerRadius() {
-        return cornerRadius;
+        return mCornerRadius;
     }
 
     /**
@@ -127,7 +126,7 @@ public class StripedDrawable {
      * @param cornerRadius radius
      */
     public StripedDrawable setCornerRadius(float cornerRadius) {
-        this.cornerRadius = cornerRadius;
+        this.mCornerRadius = cornerRadius;
         return this;
     }
 
@@ -135,7 +134,7 @@ public class StripedDrawable {
      * Get duration of stripes animation.
      */
     public int getStripeDuration() {
-        return stripeDuration;
+        return mStripeDuration;
     }
 
     /**
@@ -144,7 +143,7 @@ public class StripedDrawable {
      * @param stripeDuration stripes animation
      */
     public StripedDrawable setStripeDuration(int stripeDuration) {
-        this.stripeDuration = stripeDuration;
+        this.mStripeDuration = stripeDuration;
         return this;
     }
 
@@ -152,7 +151,7 @@ public class StripedDrawable {
      * Get tilt of stripes.
      */
     public float getTilt() {
-        return tilt;
+        return mTilt;
     }
 
     /**
@@ -161,7 +160,7 @@ public class StripedDrawable {
      * @param tilt of stripes
      */
     public StripedDrawable setTilt(float tilt) {
-        this.tilt = tilt;
+        this.mTilt = tilt;
         return this;
     }
 
@@ -169,7 +168,7 @@ public class StripedDrawable {
      * Get state of tilt stripes. If true - tilt to left, false - tilt to right.
      */
     public boolean isStripeRevert() {
-        return stripeRevert;
+        return mStripeRevert;
     }
 
     /**
@@ -178,7 +177,7 @@ public class StripedDrawable {
      * @param stripeRevert If true - tilt to left, false - tilt to right.
      */
     public StripedDrawable setStripeRevert(boolean stripeRevert) {
-        this.stripeRevert = stripeRevert;
+        this.mStripeRevert = stripeRevert;
         return this;
     }
 
@@ -186,7 +185,7 @@ public class StripedDrawable {
      * Get states of showing stripes.
      */
     public boolean isShowStripes() {
-        return showStripes;
+        return mShowStripes;
     }
 
     /**
@@ -195,7 +194,7 @@ public class StripedDrawable {
      * @param showStripes If true - stripes showing, false - stripes gone.
      */
     public StripedDrawable setShowStripes(boolean showStripes) {
-        this.showStripes = showStripes;
+        this.mShowStripes = showStripes;
         return this;
     }
 
@@ -203,7 +202,7 @@ public class StripedDrawable {
      * Get states of stripes appearance.
      */
     public boolean isStripeGradient() {
-        return stripeGradient;
+        return mStripeGradient;
     }
 
     /**
@@ -212,7 +211,7 @@ public class StripedDrawable {
      * @param stripeGradient if true stripes has gradient style, false - flat strips
      */
     public StripedDrawable setStripeGradient(boolean stripeGradient) {
-        this.stripeGradient = stripeGradient;
+        this.mStripeGradient = stripeGradient;
         return this;
     }
 
@@ -222,7 +221,7 @@ public class StripedDrawable {
      * @return loading text
      */
     public String getLoadingText() {
-        return loadingText;
+        return mLoadingText;
     }
 
     /**
@@ -231,7 +230,7 @@ public class StripedDrawable {
      * @param loadingText text when loading started
      */
     public StripedDrawable setLoadingText(String loadingText) {
-        this.loadingText = loadingText;
+        this.mLoadingText = loadingText;
         return this;
     }
 
@@ -240,18 +239,22 @@ public class StripedDrawable {
      * @param buttonText contains ohos text to be displayed on button
      */
     public  StripedDrawable setButtonText(String buttonText) {
-        this.buttonText = buttonText;
+        this.mButtonText = buttonText;
         return this;
     }
 
-
+    /**
+     *  Used to get Text set for Button in xml.
+     */
     public String getButtonText() {
-        return buttonText;
+        return mButtonText;
     }
 
-
+    /**
+     *  Used to get Text color set for Button in xml.
+     */
     public int getTextColor() {
-        return textColor;
+        return mTextColor;
     }
 
     /**
@@ -260,13 +263,15 @@ public class StripedDrawable {
      * @param textColor color of main text
      */
     public StripedDrawable setTextColor(int textColor) {
-        this.textColor = textColor;
+        this.mTextColor = textColor;
         return this;
     }
 
-
+    /**
+     * Used to get Text size set for Button in xml.
+     */
     public int getTextSize() {
-        return textSize;
+        return mTextSize;
     }
 
     /**
@@ -275,12 +280,12 @@ public class StripedDrawable {
      * @param textSize size of main text
      */
     public StripedDrawable setTextSize(int textSize) {
-        this.textSize = textSize;
+        this.mTextSize = textSize;
         return this;
     }
 
     public Font getFont() {
-        return fontName;
+        return mFontName;
     }
 
     /**
@@ -289,8 +294,7 @@ public class StripedDrawable {
      * @param fontName information about font for button text
      */
     public StripedDrawable setFont(Font fontName) {
-        this.fontName = fontName;
+        this.mFontName = fontName;
         return this;
     }
-
 }

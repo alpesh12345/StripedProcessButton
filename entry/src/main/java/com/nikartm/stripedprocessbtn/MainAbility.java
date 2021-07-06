@@ -1,6 +1,6 @@
-package com.alpesh.stripedprocessbtn;
+package com.nikartm.stripedprocessbtn;
 
-import com.alpesh.stripedprocessbtn.slice.MainAbilitySlice;
+import com.nikartm.stripedprocessbtn.slice.MainAbilitySlice;
 import ohos.aafwk.ability.Ability;
 import ohos.aafwk.content.Intent;
 

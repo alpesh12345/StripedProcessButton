@@ -1,4 +1,4 @@
-package com.alpesh.stripedprocessbtn;
+package com.nikartm.stripedprocessbtn;
 
 import ohos.aafwk.ability.AbilityPackage;
 

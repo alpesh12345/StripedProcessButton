@@ -1,28 +1,23 @@
 package com.alpesh.stripedprocessbtn;
 
-import com.alpesh.strippedprocessbutton.AttributeController;
-import com.alpesh.strippedprocessbutton.StripedDrawable;
-import ohos.aafwk.ability.delegation.AbilityDelegatorRegistry;
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorValue;
 import ohos.agp.components.Attr;
 import ohos.agp.components.AttrSet;
-import ohos.app.Context;
+import com.nikartm.stripedprocessbutton.AttributeController;
+import com.nikartm.stripedprocessbutton.StripedDrawable;
+import java.util.Optional;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Optional;
 import static org.junit.Assert.*;
 
 public class AnimatedStripedDrawableTest {
     private StripedDrawable drawable;
     private AnimatorValue animator;
-    private Context context;
     private AttrSet attrSet;
 
     @Before
     public void setUp() throws Exception {
-        context = AbilityDelegatorRegistry.getAbilityDelegator().getAppContext();
         attrSet = new AttrSet() {
             @Override
             public Optional<String> getStyle() {
