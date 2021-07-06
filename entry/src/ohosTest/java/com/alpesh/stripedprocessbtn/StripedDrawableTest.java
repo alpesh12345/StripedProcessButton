@@ -2,7 +2,7 @@ package com.alpesh.stripedprocessbtn;
 
 import ohos.agp.text.Font;
 import ohos.agp.utils.Color;
-import com.nikartm.stripedprocessbutton.StripedDrawable;
+import com.github.nikartm.stripedprocessbutton.StripedDrawable;
 import static org.junit.Assert.*;
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
-package com.nikartm.stripedprocessbutton;
+package com.github.nikartm.stripedprocessbutton;
 
-import com.nikartm.stripedprocessbutton.constant.Constants;
+import com.github.nikartm.stripedprocessbutton.constant.Constants;
 import ohos.agp.components.AttrSet;
 
 /**

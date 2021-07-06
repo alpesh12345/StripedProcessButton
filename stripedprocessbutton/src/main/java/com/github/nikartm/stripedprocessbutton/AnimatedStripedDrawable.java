@@ -1,4 +1,4 @@
-package com.nikartm.stripedprocessbutton;
+package com.github.nikartm.stripedprocessbutton;
 
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorValue;

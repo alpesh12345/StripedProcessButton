@@ -4,7 +4,7 @@ import ohos.aafwk.ability.AbilitySlice;
 import ohos.aafwk.content.Intent;
 import ohos.agp.components.Button;
 import com.alpesh.stripedprocessbtn.ResourceTable;
-import com.nikartm.stripedprocessbutton.StripedProcessButton;
+import com.github.nikartm.stripedprocessbutton.StripedProcessButton;
 
 public class MainAbilitySlice extends AbilitySlice {
     private StripedProcessButton stripedButton;

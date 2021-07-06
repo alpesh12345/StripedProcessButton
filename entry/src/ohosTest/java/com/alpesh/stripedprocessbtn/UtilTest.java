@@ -1,6 +1,6 @@
 package com.alpesh.stripedprocessbtn;
 
-import com.nikartm.stripedprocessbutton.Util;
+import com.github.nikartm.stripedprocessbutton.Util;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

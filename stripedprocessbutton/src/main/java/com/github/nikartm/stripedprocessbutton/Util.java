@@ -1,4 +1,4 @@
-package com.nikartm.stripedprocessbutton;
+package com.github.nikartm.stripedprocessbutton;
 
 /**
  * Used for calculating alpha value required to set StripeAlpha.
