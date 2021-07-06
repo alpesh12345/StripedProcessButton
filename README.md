@@ -8,7 +8,7 @@ Inspired by https://github.com/nikartm/StripedProcessButton
 <img src = "https://github.com/alpesh12345/StripedProcessButton/blob/main/screenshots/stripedprocessbutton.gif"/>
 
 ## Features
-
+It provides animated striped button to show loading process.
 
 ## Installation Instructions
 1.For using StripedProcessButton module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/stripedprocessbutton.har.
