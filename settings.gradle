@@ -1,1 +1,1 @@
-include ':entry', ':stripedprocessbutton'
+include ':entry', ':support'

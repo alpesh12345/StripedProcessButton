@@ -1,11 +1,32 @@
 # StripedProcessButton
 HarmonyOS library. Animated striped button to show loading process.
 
+## Source
+Inspired by https://github.com/nikartm/StripedProcessButton
+
 ## Screenshot
 <img src = "https://github.com/alpesh12345/StripedProcessButton/blob/main/screenshots/stripedprocessbutton.gif"/>
 
-## Usage
+## Features
 
+
+## Installation Instructions
+1.For using StripedProcessButton module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/stripedprocessbutton.har.
+```
+	dependencies {
+		implementation project(':stripedprocessbutton')
+        implementation fileTree(dir: 'libs', include: ['*.har'])
+        testCompile 'junit:junit:4.12'
+	}
+```
+2.For using StripedProcessButton in separate application using har file, add the har file in the entry/libs folder and add the dependencies in entry/build.gradle file.
+```
+	dependencies {
+		implementation fileTree(dir: 'libs', include: ['*.har'])
+		testCompile 'junit:junit:4.12'
+	}
+```
+## Usage
 Adjust the xml view
 ```
 <com.alpesh.strippedprocessbutton.StripedProcessButton
@@ -37,6 +58,8 @@ stripedButton.setCornerRadius(50)
         .setTilt(15)
         .start();
 ```
+## Future work
+Circular Reveal animaton for button feature is currently unsupported.
 ## License
 Copyright 2018 Ivan Vodyasov
 
