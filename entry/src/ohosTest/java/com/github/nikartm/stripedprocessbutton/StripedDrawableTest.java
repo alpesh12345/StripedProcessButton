@@ -15,11 +15,10 @@
  */
 package com.github.nikartm.stripedprocessbutton;
 
+import static org.junit.Assert.*;
 import ohos.agp.text.Font;
 import ohos.agp.utils.Color;
 import com.github.nikartm.support.StripedDrawable;
-
-import static org.junit.Assert.*;
 import org.junit.Test;
 
 

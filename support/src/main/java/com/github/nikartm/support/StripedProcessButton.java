@@ -41,12 +41,8 @@ public class StripedProcessButton extends Button implements Component.BindStateC
         AttributeController attrController = new AttributeController(attrs);
         mStripedDrawable = attrController.getStripedDrawable();
         addOhosAttr(mStripedDrawable);
-        try {
-            mAnimatedDrawable = new AnimatedStripedDrawable(mStripedDrawable);
-            mAnimatedDrawable.setComponent(this);
-        } catch (Exception e) {
-            //  exception
-        }
+        mAnimatedDrawable = new AnimatedStripedDrawable(mStripedDrawable);
+        mAnimatedDrawable.setComponent(this);
         setBindStateChangedListener(this);
         addDrawTask(this:: onDraw);
     }
@@ -69,7 +65,7 @@ public class StripedProcessButton extends Button implements Component.BindStateC
 
     @Override
     public void onComponentUnboundFromWindow(Component component) {
-        // empty
+        // This method is not required.
     }
 
     /**

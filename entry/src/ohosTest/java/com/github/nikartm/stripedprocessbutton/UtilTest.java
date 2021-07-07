@@ -15,9 +15,9 @@
  */
 package com.github.nikartm.stripedprocessbutton;
 
+import static org.junit.Assert.*;
 import com.github.nikartm.support.Util;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 public class UtilTest {
     private static final int MAX_ALPHA = 255;
@@ -26,8 +26,8 @@ public class UtilTest {
 
     @Test
     public void computeAlpha() {
-        assertEquals(util.computeAlpha(1),MAX_ALPHA);
-        assertEquals(util.computeAlpha(0),MIN_ALPHA);
-        assertEquals(util.computeAlpha(0.5f),(int)(MAX_ALPHA/2));
+        assertEquals(Util.computeAlpha(1),MAX_ALPHA);
+        assertEquals(Util.computeAlpha(0),MIN_ALPHA);
+        assertEquals(Util.computeAlpha(0.5f),(int)(MAX_ALPHA/2));
     }
 }

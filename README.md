@@ -1,15 +1,27 @@
 # StripedProcessButton
-HarmonyOS library. Animated striped button to show loading process.
+It's an HarmonyOS library.<br> 
+This provides an Animated striped button to show the loading process.
 
 ## Source
-Inspired by https://github.com/nikartm/StripedProcessButton
+Inspired by https://github.com/nikartm/StripedProcessButton Version v2.0.0
 
 ## Screenshot
 <img src = "https://github.com/alpesh12345/StripedProcessButton/blob/main/screenshots/stripedprocessbutton.gif"/>
 
 ## Features
-It provides animated striped button to show loading process.
-
+It provides an animated striped button that appears to be normal(on you to show or hide strips) but when clicked it gets animated according to attributes to show the loading process. 
+* Different colors can be set to show when normal and other strip colors to animate strips when clicked. 
+* Here you get the option to use GradientShader or just a normal shader (spb_stripeGradient is used to set it). <br> 
+Can observe both buttons clicked in the gif are set to true for stripe gradient and others are using a normal linear shader. 
+* You can set text that needs to be displayed while the loading process is showing and normal button text will be displayed when stop.
+* This text gets drawn above the animating button. Also actual button text is changed internally so that if match content is used, you can see required results. 
+* You can set corner radius for button and the button will get rounded corner accordingly. 
+* No need to use the different graphic file for a button background, all features about setting the background color to corner radius are included over here. 
+* This provides the option to you about how much to tilt the strip while animating. Also, you can revert the strips. 
+* Strip width can also be set according to requirement. 
+* All functionality can be adjusted programmatically also, example is shown in Usage. 
+* All functionality of normal button is retained and same font attributes will be used to display text while the button is animated. 
+* This can be used as a normal button also and can get the benefit of all features in one place.
 ## Installation Instructions
 1.For using StripedProcessButton module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/support.har.
 ```
@@ -59,7 +71,7 @@ stripedButton.setCornerRadius(50)
         .start();
 ```
 ## Future work
-Circular Reveal animaton for button feature is currently unsupported.
+Circular Reveal animation for button feature is currently not supported. One's platform includes this, it can be integrated here.
 ## License
 Copyright 2018 Ivan Vodyasov
 

@@ -15,6 +15,7 @@
  */
 package com.github.nikartm.stripedprocessbutton;
 
+import static org.junit.Assert.*;
 import ohos.aafwk.ability.delegation.AbilityDelegatorRegistry;
 import ohos.agp.components.Attr;
 import ohos.agp.components.AttrSet;
@@ -24,7 +25,6 @@ import com.github.nikartm.support.AnimatedStripedDrawable;
 import com.github.nikartm.support.AttributeController;
 import com.github.nikartm.support.StripedDrawable;
 import com.github.nikartm.support.StripedProcessButton;
-import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 import java.util.Optional;

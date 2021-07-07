@@ -15,17 +15,16 @@
  */
 package com.github.nikartm.stripedprocessbutton;
 
-import com.github.nikartm.support.AttributeController;
-import com.github.nikartm.support.StripedDrawable;
+import static org.junit.Assert.*;
 import ohos.agp.animation.Animator;
 import ohos.agp.animation.AnimatorValue;
 import ohos.agp.components.Attr;
 import ohos.agp.components.AttrSet;
-
-import java.util.Optional;
+import com.github.nikartm.support.AttributeController;
+import com.github.nikartm.support.StripedDrawable;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+import java.util.Optional;
 
 public class AnimatedStripedDrawableTest {
     private StripedDrawable drawable;

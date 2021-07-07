@@ -75,11 +75,6 @@ public class AnimatedStripedDrawable extends ShapeElement implements Element.OnC
     }
 
     @Override
-    public void setAlpha(int alpha) {
-        // empty
-    }
-
-    @Override
     public void drawToCanvas(Canvas canvas) {
         super.drawToCanvas(canvas);
         drawStripes(canvas);
