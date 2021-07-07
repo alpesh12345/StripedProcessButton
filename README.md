@@ -8,7 +8,7 @@ Inspired by https://github.com/nikartm/StripedProcessButton Version v2.0.0
 <img src = "https://github.com/alpesh12345/StripedProcessButton/blob/main/screenshots/stripedprocessbutton.gif"/>
 
 ## Features
-It provides an animated striped button that appears to be normal(depends on you to show or hide strips) but when clicked it gets animated according to attributes to show the loading process. 
+It provides an animated striped button that appears to be normal (depends on you to show or hide strips) but when clicked it gets animated according to attributes to show the loading process. 
 * Different colors can be configured for a button background, main strip, and sub strip.  
 * You can configure the text that needs to be displayed while the button is in the loading state and gets changed to normal button text when stopped. 
 * Here you get the option to use GradientShader or just a normal shader (spb_stripeGradient is used to set it).<br>
