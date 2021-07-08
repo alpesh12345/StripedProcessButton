@@ -11,16 +11,6 @@ N
 entry/src/ohosTest/config.json,5\f\5f825552d315e50345821d529d3773f9685756cb
 L
 support/src/main/config.json,3\3\33c02f9d0c9fc539ef33483d43a4064e8e5cb0d5
-x
-Hsupport/src/main/java/com/github/nikartm/support/constant/Constants.java,1\7\17a0609daca2dfeedb749545e0321f8b0bce5a58
-u
-Esupport/src/main/java/com/github/nikartm/support/StripedDrawable.java,9\3\930017e681799c38229d120ac48d41d7e0f83275
-B
-entry/build.gradle,a\d\ad38b2dea33752cac233aa09d7dfbe582e9dded6
-D
-support/build.gradle,b\7\b70e40198d92273afe90dbf870db20f9c082ee25
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 ~
 Nentry/src/main/java/com/github/nikartm/stripedprocessbutton/MyApplication.java,3\9\3917174f1a65f8602aa6e45461ff8712a732daac
 |
@@ -29,3 +19,11 @@ J
 entry/src/main/config.json,1\0\10f965cf51fe14a5ef0ca2ebefb1bd7e4607eeb2
 ‡
 Wentry/src/main/java/com/github/nikartm/stripedprocessbutton/slice/MainAbilitySlice.java,7\e\7ef87ac6e481f67bdfae316a627e6da6a43cfb13
+
+`entry/src/ohosTest/java/com/github/nikartm/stripedprocessbutton/AnimatedStripedDrawableTest.java,e\4\e4602e49fb0220693d07696d2d76d731e349284c
+
+]entry/src/ohosTest/java/com/github/nikartm/stripedprocessbutton/StripedProcessButtonTest.java,a\3\a3761f803147ca13cba6cf231959776af545eff3
+}
+Mentry/src/ohosTest/java/com/github/nikartm/stripedprocessbutton/UtilTest.java,c\a\cac917ed70d98b256b17e8015d348d3a98e08a79
+9
+	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
