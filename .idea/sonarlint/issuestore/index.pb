@@ -25,5 +25,3 @@ Wentry/src/main/java/com/github/nikartm/stripedprocessbutton/slice/MainAbilitySl
 ]entry/src/ohosTest/java/com/github/nikartm/stripedprocessbutton/StripedProcessButtonTest.java,a\3\a3761f803147ca13cba6cf231959776af545eff3
 }
 Mentry/src/ohosTest/java/com/github/nikartm/stripedprocessbutton/UtilTest.java,c\a\cac917ed70d98b256b17e8015d348d3a98e08a79
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
